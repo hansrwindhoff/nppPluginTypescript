@@ -70,11 +70,7 @@ namespace NppPluginTypescript
         p.StartInfo.Arguments = "/k tsc.exe -v --target ES5 --comments \"" + sbCurFilePath + "\"";
         p.StartInfo.CreateNoWindow = false;
         p.StartInfo.UseShellExecute = true;
-        // p.StartInfo.RedirectStandardOutput = true;
-
-
         p.Start();
-
         p.WaitForExit();
         string targetjsFile =
                 Path.GetDirectoryName(sbCurFilePath.ToString())
@@ -84,15 +80,12 @@ namespace NppPluginTypescript
 
         Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DOOPEN, 0, targetjsFile);
         Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_RELOADFILE, 0, targetjsFile);
-
-        // MessageBox.Show("Building js from type script! " + sbCurFilePath);
       }
       else
       {
         if (alertme)
           MessageBox.Show("This is not a ts file...");
       }
-
     }
 
 
@@ -110,14 +103,8 @@ namespace NppPluginTypescript
         p.StartInfo.Arguments = "/k node.exe \"" + sbCurFilePath + "\"";
         p.StartInfo.CreateNoWindow = false;
         p.StartInfo.UseShellExecute = true;
-        // p.StartInfo.RedirectStandardOutput = true;
-
-
         p.Start();
-
         p.WaitForExit();
-
-        // MessageBox.Show("Building js from type script! " + sbCurFilePath);
       }
       else
       {
