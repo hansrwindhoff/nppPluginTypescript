@@ -2,8 +2,8 @@ nppPluginTypescript
 ===================
 
 notepad ++ plugin for typescript, 
-so far I have compile on save
-and run js in node.
+so far I have 'compile on save'
+and 'run js in node'.
 
 To use the plugin compile it (VS2012) and put the DLL into the plugin folder under the notpad++ install folder.
 Restart notepad++ and you should find a new submenu in the plugins menu.
@@ -16,4 +16,7 @@ The "Run (node.js) javascript" command will execute node (install separately) wi
 In the plugin info dialog you will find the link to the websites for typescript and node.js
 
 Todo:
- and intelli-sense
+  intelli-sense
+
+
+There is a syntax coloring xml file at: https://gist.github.com/wate/5077019 , this gist is not related to me.
