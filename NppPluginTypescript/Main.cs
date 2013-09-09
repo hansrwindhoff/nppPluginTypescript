@@ -63,11 +63,11 @@ namespace NppPluginTypescript
       Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_SAVECURRENTFILE, 0, 0);
       Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_GETFULLCURRENTPATH, Win32.MAX_PATH, sbCurFilePath);
 
-      if (Path.GetExtension(sbCurFilePath.ToString()) == ".ts")
+      if (Path.GetExtension(sbCurFilePath.ToString()) == ".ts" && !sbCurFilePath.ToString().EndsWith(".d.ts"))
       {
         System.Diagnostics.Process p = new System.Diagnostics.Process();
         p.StartInfo.FileName = "cmd.exe";
-        p.StartInfo.Arguments = "/k tsc.exe -v --target ES5 --comments \"" + sbCurFilePath + "\"";
+        p.StartInfo.Arguments = "/k tsc.exe -v --target ES5 \"" + sbCurFilePath + "\"";
         p.StartInfo.CreateNoWindow = false;
         p.StartInfo.UseShellExecute = true;
         p.Start();
