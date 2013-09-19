@@ -71,15 +71,16 @@ namespace NppPluginTypescript
         p.StartInfo.CreateNoWindow = false;
         p.StartInfo.UseShellExecute = true;
         p.Start();
-        p.WaitForExit();
-        string targetjsFile =
-                Path.GetDirectoryName(sbCurFilePath.ToString())
-                + @"\"
-                + Path.GetFileNameWithoutExtension(sbCurFilePath.ToString())
-                + ".js";
 
-        Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DOOPEN, 0, targetjsFile);
-        Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_RELOADFILE, 0, targetjsFile);
+        // its kind of annoying to have to close this command window
+        //p.WaitForExit();
+        //string targetjsFile =
+        //        Path.GetDirectoryName(sbCurFilePath.ToString())
+        //        + @"\"
+        //        + Path.GetFileNameWithoutExtension(sbCurFilePath.ToString())
+        //        + ".js";
+        //Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DOOPEN, 0, targetjsFile);
+        //Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_RELOADFILE, 0, targetjsFile);
       }
       else
       {
