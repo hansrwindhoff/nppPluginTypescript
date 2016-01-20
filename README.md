@@ -1,4 +1,4 @@
-nppPluginTypescript
+DEPRETIATED - nppPluginTypescript
 ===================
 
 notepad ++ plugin for typescript, 
